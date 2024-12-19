@@ -1,3 +1,10 @@
+## Code by Mitchell Schoenbacher
+## Last updated 12/19/2024
+## Please cite my name and github if you use this code
+## github: https://github.com/Mschoenbacher05
+## LinkedIn: https://www.linkedin.com/in/mitchell-schoenbacher-2724172aa/
+## Notes: The ability to more edit datafields and improve useability may come in the future
+
 
 def outputHeader(dataFieldName,dataFieldType,className):
     
@@ -51,7 +58,7 @@ def outputImplementation(dataFieldName,dataFieldType,className):
     with open(className +"Gen.cpp", "w") as file:
         file.write("#include <iostream>\n")
         file.write('#include "' + className + 'Gen.h"\n')
-        file.write("using namespace std;\n\n")
+        file.write("using namespace std;\n")
 
         if len(dataFieldName) != len(dataFieldType):
             print("Error, lists not of the same length data types or names may be lost")
@@ -95,12 +102,12 @@ dataNames = []
 
 
 # This while loop gets the type and then the name of each datafield in the class
-while dataType != "exit":
+while dataType.lower() != "exit":
     
     dataType = input("Input data type ")
 
     # Ensure the user is not trying to exit
-    if dataType != "exit":
+    if dataType.lower() != "exit":
         
         dataTypes.append(dataType)
 
@@ -108,7 +115,8 @@ while dataType != "exit":
         dataName = input("Input data field name (your data is of type " + dataType + ") ")
         dataNames.append(dataName)
 
-className = input("Enter class name")
+className = input("Enter class name ")
+
 ##### Add the ability to edit here #####
 
 # Output header file
@@ -116,4 +124,3 @@ className = input("Enter class name")
 outputHeader(dataNames,dataTypes,className)
 
 outputImplementation(dataNames,dataTypes,className)
-# Open a file
