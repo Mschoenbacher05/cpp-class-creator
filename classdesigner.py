@@ -83,7 +83,7 @@ def outputImplementation(dataFieldName,dataFieldType,className):
     
 
 print("Welcome to the class designer.")
-print ("Enter each of your data fields in the format <Type> <name>. Input 'exit' to exit")
+print ("Input data fields. You will first be prompted to input a type such as 'int', then enter a name such as 'num'. Input 'exit' on the type input to finish")
 
 dataType = ""
 dataName = ""
